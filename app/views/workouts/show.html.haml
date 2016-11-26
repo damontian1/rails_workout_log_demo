@@ -1,15 +1,18 @@
-%p= @workout.date.strftime("%m/%d/%Y at %I:%M%p ")
-%p= @workout.workout
-%p= @workout.mood
-%p= @workout.length
+.col-md-6.col-md-offset-3
+	%p= @workout.date.strftime("%m/%d/%Y at %I:%M%p ")
+	%p= @workout.workout
+	%p= @workout.mood
+	%p= @workout.length
 
-%h2 Exercises
-= render @workout.exercises
+	%h2 Exercises
+	= render @workout.exercises
 
-%h3 Add an exercise
-= render "exercises/form"
+	%h3 Add an exercise
+	= render "exercises/form"
 
-= link_to "Back", root_path
-= link_to "Edit", edit_workout_path
-= link_to "Delete", @workout, method: :delete, data: {confirm: "are you sure?"}
+	%br 
+	
+	= link_to "Back", root_path
+	= link_to "Edit", edit_workout_path
+	= link_to "Delete", @workout, method: :delete, data: {confirm: "are you sure?"}
 
